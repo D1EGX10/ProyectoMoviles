@@ -26,6 +26,42 @@ Progresión metapartida (árbol de habilidades global), cosméticos, multijugado
 
 **Hipótesis pendiente de validar:**
 Declaramos de forma explícita que el interés del público en jugar "GATOSVSFANTASMAS", una temática visual ligera y accesible retendrá mejor a la audiencia casual móvil que la estética de fantasía oscura habitual en este género y su viabilidad comercial son todavía una hipótesis sin validar, ya que aún no hemos realizado pruebas ni encuestas con usuarios.
+## 1.2 Material visual de la idea
+
+### Diagrama del recorrido del usuario
+graph TD
+    A[Abre la aplicación] --> B{¿Carga exitosa?}
+    B -- No --> C[Estado: Pantalla de Error de Carga]
+    C --> A
+    B -- Sí --> D[Menú Principal]
+    D --> E[Inicia Partida / Carga Escenario]
+    E --> F[Pantalla de Juego]
+    F --> G{¿Sube de Nivel?}
+    G -- Sí --> H[Estado: Selección de Mejora]
+    H --> F
+    G -- No --> I{¿Pierde toda la salud?}
+    I -- No --> F
+    I -- Sí --> J[Pantalla de Fin de Partida / Game Over]
+    J --> K{¿Guardar Récord?}
+    K -- Fallo de red --> L[Estado: Error al guardar datos]
+    L --> D
+    K -- Éxito --> D
+
+### Bosquejos de las pantallas principales
+
+A continuación se presentan los esquemas de las pantallas principales del juego, incluyendo los estados que no son la ruta feliz (carga y error) y los controles de juego.
+
+#### Pantalla A: Menú Principal (con estado de carga)
+![Pantalla A](PantallaA.jpeg)
+Bosquejo del Menú Principal indicando el estado alterno de carga. Elaborado por Diego Mendieta. Generado con asistencia de IA.
+
+#### Pantalla B: Pantalla de Juego
+![Pantalla B](PantallaB.jpeg)
+Esquema de la pantalla de juego mostrando sus elementos y controles. Elaborado por Sofia Ortega. Generado con asistencia de IA.
+
+#### Pantalla de Fin de Partida (con estado de error)
+![Pantalla C](PantallaC.jpeg)
+Bosquejo de Fin de Partida indicando el estado alterno de error al guardar datos. Elaborado por Sofia Ortega. Generado con asistencia de IA.
 
 
 ## 1.3 Historia de usuario y criterio de aceptación
